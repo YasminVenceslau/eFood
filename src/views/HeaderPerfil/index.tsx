@@ -9,8 +9,8 @@ export const HeaderPerfil = () => {
         <>
             <div style={{backgroundImage:`url(${fundoImg})`}}>
                 <S.COntainer>
-                    <li>
-                        <Link
+                    <li >
+                        <Link 
                             to="/"
                             style={{
                             display: 'flex',

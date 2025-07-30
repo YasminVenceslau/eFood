@@ -5,6 +5,7 @@ export const CardLsita = styled.li`
     border: 1px solid ${cores.corPrincipal};
     padding: 16px;
     border-radius: 8px;
+    background-color: ${cores.corBranco};
 
     a{
         color: ${cores.corPrincipal};
@@ -76,17 +77,7 @@ export const Titulo = styled.h3`
 
 `
 
-export const ImagemCabeca = styled.div`
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 4px;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px;
-`;
+
 
 export const BotaoSaibaMais = styled.button`
   background-color: ${cores.corPrincipal};

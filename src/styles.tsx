@@ -5,6 +5,7 @@ export const cores = {
     corBranco:  '#fff',
     corDEFundo: '#FFF8F2',
     corDoROdaPE: '#FFEBD9'
+    
 }
 
 export const GlobalCss = createGlobalStyle`
@@ -22,7 +23,7 @@ export const GlobalCss = createGlobalStyle`
         height: 100%;
         width: 100%;
         color: ${cores.corPrincipal};
-        background-color: ${cores.corDEFundo};
+        background-color: #FFEBD9;
     }  
 `
 
@@ -48,4 +49,14 @@ export const Logo = styled.p`
     
 
 `
-
+export const ImagemCabeca = styled.div`
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+`;

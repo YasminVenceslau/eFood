@@ -6,6 +6,7 @@ export const ListaRes = styled.main`
     justify-content: center;
     padding: 40px 16px;
     color: ${cores.corPrincipal};
+    background-color: ${cores.corDEFundo};
 `
 
 export const ConteudoLista = styled.ul`

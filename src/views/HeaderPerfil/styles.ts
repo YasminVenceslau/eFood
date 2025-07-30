@@ -5,13 +5,14 @@ export const COntainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:24px 80px;
-    background-color: #FFEBD9;
+    padding:32px 80px;
 
     
+
 `
+
 export const Logo = styled.img`
-    padding-left: 30px;
+    padding-left: 50px;
 `
 
 export const StyledLink = styled(Link)`

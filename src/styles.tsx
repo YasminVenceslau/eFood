@@ -22,11 +22,11 @@ export const GlobalCss = createGlobalStyle`
     }
 
     body{
-        width:1366px;
+        width:1300px;
         color: ${cores.corPrincipal};
         background-color: #FFEBD9;
-        max-width: 1366px;
-        max-width: 1366px;
+        max-width: 1300px;
+        max-width: 1300px;
         margin: 0 auto;
     }  
 `
@@ -40,7 +40,7 @@ export const Imagem = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1366px;
+    max-width: 1300px;
     margin: 0 auto;
 `
 

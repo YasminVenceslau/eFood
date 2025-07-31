@@ -3,7 +3,7 @@ import { cores } from "../../styles";
 
 export const RodaPeContainer = styled.div`
     display: inline-block;
-    max-width: 1366px;
+    max-width: 1300px;
     margin: 0 auto;
 `
 export const RedeSocial = styled.ul`

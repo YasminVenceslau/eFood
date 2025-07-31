@@ -1,93 +1,34 @@
-import pizza from '../../assets/imagens/pizza.png'
+import { useCarrinho } from '../../models/CarrinhoContext'
+import { Pratos } from '../../models/pratosDoRestaurante'
 import { ImagemCabeca } from "../../styles"
 import * as S from './styles'
 
 export const ListaDoPerfil = () => {
-    return(
-        <S.MainLista>
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-        
-        
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-        
-        
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-        
-        
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-        
-        
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-        
-        
-            <S.CardLista>
-                <ImagemCabeca style={{backgroundImage:`url(${pizza})`}}/>
-                <S.CardTitulo>
-                    Pizza Marguerita
-                </S.CardTitulo>
-                <S.CardTexto>
-                    A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!
-                </S.CardTexto>
-                <S.CardButton>
-                    Adicionar ao carrinho
-                </S.CardButton>
-            </S.CardLista>
-            
-        </S.MainLista>
-    )
+
+    const { adicionarProduto } = useCarrinho()
+
+    return (
+    // Container principal da lista de pratos
+    <S.MainLista>
+      {
+        // Itera sobre cada prato e renderiza um card
+        Pratos.map((prato) => (
+          // Componente de card estilizado para cada prato
+          <S.CardLista key={prato.id}>
+            {/* Imagem de fundo com estilo inline */}
+            <ImagemCabeca style={{ backgroundImage: `url(${prato.imagem})` }} />
+
+            {/* Título do prato */}
+            <S.CardTitulo>{prato.title}</S.CardTitulo>
+
+            {/* Descrição do prato */}
+            <S.CardTexto>{prato.conteudo}</S.CardTexto>
+
+            {/* Botão para adicionar ao carrinho */}
+            <S.CardButton onClick={adicionarProduto} >Adicionar ao carrinho</S.CardButton>  {/* Ao clicar, adiciona 1 produto ao carrinho */}
+          </S.CardLista>
+        ))
+      }
+    </S.MainLista>
+  )
 }

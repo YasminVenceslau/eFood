@@ -6,13 +6,14 @@ export const COntainer = styled.header`
     justify-content: space-between;
     align-items: center;
     padding:32px 80px;
-
+    
     
 
 `
 
 export const Logo = styled.img`
     padding-left: 50px;
+     
 `
 
 export const StyledLink = styled(Link)`
@@ -23,7 +24,7 @@ export const StyledLink = styled(Link)`
     color: #e66767;
     text-decoration: none;
     font-weight: bold;
-
+    
     svg {
         height: 20px;
         width: 20px;

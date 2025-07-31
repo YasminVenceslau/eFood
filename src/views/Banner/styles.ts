@@ -7,7 +7,7 @@ export const ImagemBanner = styled.div`
     background-image: url(${bannero});
     background-repeat: no-repeat;
     padding: 24px;
-    
+    overflow-y: hidden;
     
     i{
         color: ${cores.corBranco} !important;

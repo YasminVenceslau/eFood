@@ -17,13 +17,17 @@ export const GlobalCss = createGlobalStyle`
         list-style: none;
         text-decoration: none;
         color: ${cores.corPrincipal};
+        overflow-x: hidden;
+        
     }
 
-    html, body{
-        height: 100%;
-        width: 100%;
+    body{
+        width:1366px;
         color: ${cores.corPrincipal};
         background-color: #FFEBD9;
+        max-width: 1366px;
+        max-width: 1366px;
+        margin: 0 auto;
     }  
 `
 
@@ -36,6 +40,8 @@ export const Imagem = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1366px;
+    margin: 0 auto;
 `
 
 export const Logo = styled.p`
@@ -50,13 +56,13 @@ export const Logo = styled.p`
 
 `
 export const ImagemCabeca = styled.div`
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 4px;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
 `;

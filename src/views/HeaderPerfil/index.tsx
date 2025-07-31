@@ -3,8 +3,12 @@ import fundoImg from '../../assets/imagens/HeaderPerfil.png'
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styles'
 import { ArrowLeftFromLine } from 'lucide-react'
+import { useCarrinho } from '../../models/CarrinhoContext'
 
 export const HeaderPerfil = () => {
+
+    const { quantidade } = useCarrinho()  // obtém a quantidade de produtos no carrinho
+
     return(
         <>
             <div style={{backgroundImage:`url(${fundoImg})`}}>
@@ -29,8 +33,9 @@ export const HeaderPerfil = () => {
                     <li>
                         <S.Logo src={logo} alt="eFood " />
                     </li>
+                    {/* Quantidade de produtos no carrinho */}
                     <li>
-                        0 produto(s) no carrinho
+                        {quantidade} produto(s) no carrinho
                     </li>
                 </S.COntainer>
 

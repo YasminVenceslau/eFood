@@ -7,6 +7,8 @@ export const ListaRes = styled.main`
     padding: 40px 16px;
     color: ${cores.corPrincipal};
     background-color: ${cores.corDEFundo};
+    max-width: 1366px;
+    margin: 0 auto;
 `
 
 export const ConteudoLista = styled.ul`

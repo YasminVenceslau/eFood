@@ -25,11 +25,24 @@ export function useRestaurante() {
   const [restaurante, setRestaurante] = useState<Restaurante | null>(null)
 
   useEffect(() => {
+    if (!id) return
+
     fetch('https://ebac-fake-api.vercel.app/api/efood/restaurantes')
       .then((res) => res.json())
       .then((data) => {
-        const encontrado = data.find((item: Restaurante) => item.id === Number(id))
-        setRestaurante(encontrado)
+        const encontrado = data.find(
+          (item: Restaurante) => item.id === Number(id)
+        )
+        if (encontrado) {
+          setRestaurante(encontrado)
+        } else {
+          console.warn('Restaurante não encontrado para ID:', id)
+          setRestaurante(null) // garante que vai renderizar
+        }
+      })
+      .catch((erro) => {
+        console.error('Erro ao carregar restaurante:', erro)
+        setRestaurante(null)
       })
   }, [id])
 

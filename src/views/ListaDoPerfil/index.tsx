@@ -1,15 +1,18 @@
-import { Link, useParams } from 'react-router-dom' // Importa useParams também
+import { Link } from 'react-router-dom' // para pegar o ID da URL
 import { ImagemCabeca } from '../../styles'
 import * as S from './styles'
 import { useRestaurante } from '../../models/LinkDOsRestaurantes'
+import { ConteudoDetalhes } from '../ConteudoDetalhes'
 
 export const ListaDoPerfil = () => {
-  const restaurante = useRestaurante()
-  const { id } = useParams() // captura o ID do perfil da URL
 
-  if (!restaurante) {
+const restaurante = useRestaurante()
+
+if (!restaurante) {
     return <p>Carregando restaurante...</p>
-  }
+}
+
+  
 
   return (
     <S.MainLista>
@@ -18,16 +21,21 @@ export const ListaDoPerfil = () => {
           <ImagemCabeca style={{ backgroundImage: `url(${prato.foto})` }} />
           <S.CardTitulo>{prato.nome}</S.CardTitulo>
           <S.CardTexto>{prato.descricao}</S.CardTexto>
-          
-          {/* Monta a URL corretamente com todos os IDs */}
-          <S.CardButton
-            as={Link}
-            to={`/perfil/${id}/restaurante/${restaurante.id}/prato/${prato.id}`}
-          >
+          <S.CardButton as={Link} to={`/perfil/id/restaurante/${restaurante.id}/prato/${prato.id}`}>
             Mais Detalhes
           </S.CardButton>
         </S.CardLista>
       ))}
     </S.MainLista>
+
+    
+  )
+}
+
+export const Detalhes = () => {
+  return (
+    <S.ModalOverlay>
+      <ConteudoDetalhes />
+    </S.ModalOverlay>
   )
 }

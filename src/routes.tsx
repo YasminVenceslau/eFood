@@ -18,3 +18,5 @@ export const Rotas = () => {
         </>
     )
 }
+
+// path="/perfil/:perfilId/restaurante/:restauranteId/prato/:id" element={<Detalhes />}

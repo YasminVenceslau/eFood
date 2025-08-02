@@ -1,18 +1,16 @@
-import { RodaPe } from "../../components/Footer"
-import { Banner } from "../../views/Banner"
-import { ConteudoDetalhes } from "../../views/ConteudoDetalhes"
-import { HeaderPerfil } from "../../views/HeaderPerfil"
-import { ListaDoPerfil } from "../../views/ListaDoPerfil"
-
+import { ConteudoDetalhes } from '../../views/ConteudoDetalhes'
+import * as S from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export const Detalhes = () => {
-    return(
-        <>
-            <HeaderPerfil />
-            <Banner />
-            <ListaDoPerfil/>
-            <ConteudoDetalhes />
-            <RodaPe />
-        </>
-    )
+  const navigate = useNavigate()
+
+  return (
+    <S.ModalOverlay>
+      <S.ModalContent>
+        <S.Fechar onClick={() => navigate(-1)}>✖</S.Fechar>
+        <ConteudoDetalhes />
+      </S.ModalContent>
+    </S.ModalOverlay>
+  )
 }

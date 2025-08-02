@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCarrinho } from '../../models/CarrinhoContext'
-import { ImagemComida } from './styles'
+import * as S from './styles'
 
 // Define o tipo de um prato individual
 type Prato = {
@@ -61,7 +61,7 @@ export const ConteudoDetalhes = () => {
   return (
     <div>
       <h1>{restaurante.titulo}</h1>
-      <ImagemComida>
+      <S.ImagemComida>
         <img src={prato.foto} alt={prato.nome} />
         <h2>{prato.nome}</h2>
         <p>{prato.descricao}</p>
@@ -69,7 +69,7 @@ export const ConteudoDetalhes = () => {
         <button onClick={() => adicionarProduto(prato)}>
           Adicionar ao Carrinho - {formataPreco(prato.preco)}
         </button>
-      </ImagemComida>
+      </S.ImagemComida>
     </div>
   )
 }

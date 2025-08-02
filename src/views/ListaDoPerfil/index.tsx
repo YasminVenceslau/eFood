@@ -1,34 +1,33 @@
-import { useCarrinho } from '../../models/CarrinhoContext'
-import { Pratos } from '../../models/pratosDoRestaurante'
-import { ImagemCabeca } from "../../styles"
+import { Link, useParams } from 'react-router-dom' // Importa useParams também
+import { ImagemCabeca } from '../../styles'
 import * as S from './styles'
+import { useRestaurante } from '../../models/LinkDOsRestaurantes'
 
 export const ListaDoPerfil = () => {
+  const restaurante = useRestaurante()
+  const { id } = useParams() // captura o ID do perfil da URL
 
-    const { adicionarProduto } = useCarrinho()
+  if (!restaurante) {
+    return <p>Carregando restaurante...</p>
+  }
 
-    return (
-    // Container principal da lista de pratos
+  return (
     <S.MainLista>
-      {
-        // Itera sobre cada prato e renderiza um card
-        Pratos.map((prato) => (
-          // Componente de card estilizado para cada prato
-          <S.CardLista key={prato.id}>
-            {/* Imagem de fundo com estilo inline */}
-            <ImagemCabeca style={{ backgroundImage: `url(${prato.imagem})` }} />
-
-            {/* Título do prato */}
-            <S.CardTitulo>{prato.title}</S.CardTitulo>
-
-            {/* Descrição do prato */}
-            <S.CardTexto>{prato.conteudo}</S.CardTexto>
-
-            {/* Botão para adicionar ao carrinho */}
-            <S.CardButton onClick={adicionarProduto} >Adicionar ao carrinho</S.CardButton>  {/* Ao clicar, adiciona 1 produto ao carrinho */}
-          </S.CardLista>
-        ))
-      }
+      {restaurante.cardapio.map((prato) => (
+        <S.CardLista key={prato.id}>
+          <ImagemCabeca style={{ backgroundImage: `url(${prato.foto})` }} />
+          <S.CardTitulo>{prato.nome}</S.CardTitulo>
+          <S.CardTexto>{prato.descricao}</S.CardTexto>
+          
+          {/* Monta a URL corretamente com todos os IDs */}
+          <S.CardButton
+            as={Link}
+            to={`/perfil/${id}/restaurante/${restaurante.id}/prato/${prato.id}`}
+          >
+            Mais Detalhes
+          </S.CardButton>
+        </S.CardLista>
+      ))}
     </S.MainLista>
   )
 }

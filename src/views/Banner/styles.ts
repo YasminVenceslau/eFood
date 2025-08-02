@@ -1,11 +1,11 @@
-import bannero from '../../assets/imagens/banner.png'
+
 import styled from "styled-components";
 import { cores } from '../../styles';
 
 export const ImagemBanner = styled.div`
     height: 280px;
-    background-image: url(${bannero});
     background-repeat: no-repeat;
+    background-size: cover;
     padding: 24px;
     overflow-y: hidden;
     

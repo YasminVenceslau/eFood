@@ -2,34 +2,41 @@ import * as S from "./styles"
 
 import { Link } from "react-router-dom"
 import { ImagemCabeca } from "../../styles"
-import { listaDeRestaurantes } from "../../models/restaurantes"
 
-export const ListaRestaurantes = () => {
+
+type Restaurante = {
+  id: number
+  titulo: string
+  tipo: string
+  capa: string
+  avaliacao: string
+  descricao: string
+  destacado: boolean
+}
+
+type Props = {
+  restaurantes: Restaurante[]
+}
+
+export const ListaRestaurantes = ({ restaurantes }: Props) => {
   return (
     <>
-      {listaDeRestaurantes.map((restaurante) => (
+        {restaurantes.map((restaurante) => (
         <S.CardLsita key={restaurante.id}>
-          <ImagemCabeca style={{ backgroundImage: `url(${restaurante.imagem})` }}>
+          <ImagemCabeca style={{ backgroundImage: `url(${restaurante.capa})` }}>
             <S.Tags>
-              {restaurante.infos.map((info, index) => (
-                <button
-                  key={index}
-                  className={`tag ${
-                    info.toLowerCase().includes('destaque') ? 'destaque' : 'tipo'
-                  }`}
-                >
-                  {info}
-                </button>
-              ))}
+              <button className={`tag ${restaurante.destacado ? 'destaque' : 'tipo'}`}>
+                {restaurante.tipo}
+              </button>
             </S.Tags>
           </ImagemCabeca>
           <S.Titulo>
-            <p>{restaurante.title}</p>
-            <span>{restaurante.nota}</span>
+            <p>{restaurante.titulo}</p>
+            <span>{restaurante.avaliacao} ⭐</span>
           </S.Titulo>
           <p>{restaurante.descricao}</p>
           <S.BotaoSaibaMais>
-            <Link to='/Perfil'>Saiba Mais</Link>
+            <Link to={`/perfil/${restaurante.id}`}>Saiba Mais</Link>
           </S.BotaoSaibaMais>
         </S.CardLsita>
       ))}

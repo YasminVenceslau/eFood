@@ -1,12 +1,19 @@
 
 import { ImagemBanner } from './styles'
+import { useRestaurante } from '../../models/LinkDOsRestaurantes'
 
 export const Banner = () => {
+
+const restaurante = useRestaurante()
+
+if (!restaurante) {
+    return <p>Carregando restaurante...</p>
+}
     return(
         <div style={{overflowY:`hidden`}}>
-            <ImagemBanner >
-                <i>Italiana</i>
-                <h3>La Dolce Vita Trattoria</h3>
+            <ImagemBanner style={{backgroundImage:`url(${restaurante.capa})`}}>
+                <i> {restaurante.tipo} </i>
+                <h3> {restaurante.titulo} </h3>
             </ImagemBanner>
         </div>
     )

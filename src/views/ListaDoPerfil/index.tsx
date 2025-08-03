@@ -49,7 +49,7 @@ export const ListaDoPerfil = () => {
           <div onClick={(e) => e.stopPropagation()}>
             <ConteudoDetalhes
               prato={pratoSelecionado}
-              onFechar={() => setMostrarDetalhes(false)}
+              
             />
           </div>
         </S.ModalOverlay>

@@ -10,7 +10,7 @@ export const Detalhes = () => {
     <S.ModalOverlay>
       <S.ModalContent>
         <S.Fechar onClick={() => navigate(-1)}>  x </S.Fechar>
-        <ConteudoDetalhes />
+        <ConteudoDetalhes prato={pratoSelecionado}/>
       </S.ModalContent>
     </S.ModalOverlay>
   )

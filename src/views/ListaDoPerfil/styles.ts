@@ -31,7 +31,10 @@ export const CardTexto = styled.p`
     color: ${cores.corBranco};
     font-size: 14px;
     font-weight: 400;
-    margin: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-weight: 300;
 `
 
 export const CardButton = styled.button`
@@ -44,7 +47,7 @@ export const CardButton = styled.button`
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
+    text-align: center;
     &:hover {
         background-color: #ffd4b8;
     }

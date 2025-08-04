@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { cores } from "../../styles"
 
 export const ImagemComida = styled.div`
     
@@ -8,7 +7,6 @@ export const ImagemComida = styled.div`
         width: 280px;
         height: 280px;
         object-fit: cover;
-        padding: 8px;
     }
 
     
@@ -86,38 +84,4 @@ export const BotaoFechar = styled.img`
   cursor: pointer;
   width: 16px;
   height: 16px;
-`
-
-export const CardDetalhes = styled.div`
-  display: flex;
-  max-width: 1024px;
-  background-color: #e66767;
-    
-  img{
-    max-width: 100%;
-    object-fit: cover;
-    
-}
-  .container{
-    width: 300px;
-    padding: 8px;
-    
-    h2{
-      font-size: 18px;
-      color: ${cores.corBranco};
-      padding-left: 8px;
-      padding-bottom: 8px;
-    }
-    p{
-      font-size: 14px;
-      padding: 8px;
-      
-      color: ${cores.corBranco};
-    }
-    .button{
-      padding-top: 10px;
-      margin:6px ;
-    }
-  }
-
 `

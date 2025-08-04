@@ -2,12 +2,17 @@
 import { ImagemBanner } from './styles'
 import { useRestaurante } from '../../models/LinkDOsRestaurantes'
 
+
+
+
+
 export const Banner = () => {
 
 const restaurante = useRestaurante()
 
 if (!restaurante) {
-    return <p>Carregando restaurante...</p>
+    return <p>Restaurante não encontrado ou carregando...</p>
+    
 }
     return(
         <div style={{overflowY:`hidden`}}>

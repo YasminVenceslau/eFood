@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -12,17 +11,20 @@ export const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  color: ${cores.corBranco};
+
+  img{
+    max-width: 100%;
+    width: 100%;
+  }
 `
 
 export const ModalContent = styled.div`
-  background: ${cores.corPrincipal};
+  background: #fff;
   padding: 32px;
   border-radius: 8px;
   max-width: 600px;
   width: 100%;
   position: relative;
-  
 `
 
 export const Fechar = styled.button`
@@ -33,5 +35,5 @@ export const Fechar = styled.button`
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color:${cores.corBranco};
+  color: #333;
 `

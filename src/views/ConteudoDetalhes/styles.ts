@@ -1,19 +1,46 @@
 import styled from "styled-components"
+import { cores } from "../../styles"
+
+export const CardFundo = styled.div`
+  background-color: #e66767 !important;
+  width: 1024px;
+  height: 344px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+
+  p{
+      padding: 8px;
+      color: ${cores.corBranco};
+      font-size : 14px;
+      font-weight: 400;
+  }
+  b{
+    color: ${cores.corBranco};
+  }
+  h2{
+    color: ${cores.corBranco};
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+.container{
+  padding: 8px;
+}
+`
 
 export const ImagemComida = styled.div`
     
     img{
-        max-width: 20%;
+        max-width: 100%;
         width: 280px;
         height: 280px;
         object-fit: cover;
+        padding: 8px;
     }
 
-    
-    @media (max-width: 768px) {
-        width: 100%;
-        height: 200px;
-    }
 `
 
 export const Overlay = styled.div`
@@ -25,42 +52,9 @@ export const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   z-index: 999;
-`
-
-export const ModalContainer = styled.div`
-  background-color: #e66767;
-  color: #fff;
-  padding: 32px;
-  max-width: 1024px;
-  width: 90%;
-  position: relative;
-  display: flex;
-  gap: 24px;
   
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 16px;
-  }
-`
-
-export const ConteudoModal = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`
-
-export const TituloModal = styled.h3`
-  font-size: 18px;
-  font-weight: 900;
-  margin-bottom: 8px;
-`
-
-export const DescricaoModal = styled.p`
-  font-size: 14px;
-  line-height: 22px;
-  margin-bottom: 16px;
 `
 
 export const BotaoAdicionar = styled.button`
@@ -71,7 +65,7 @@ export const BotaoAdicionar = styled.button`
   border: none;
   cursor: pointer;
   max-width: fit-content;
-  
+  margin: 8px;
   &:hover {
     background-color: #f7e0c6;
   }
@@ -84,4 +78,11 @@ export const BotaoFechar = styled.img`
   cursor: pointer;
   width: 16px;
   height: 16px;
+`
+export const CardDetalhes = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 16px;
 `

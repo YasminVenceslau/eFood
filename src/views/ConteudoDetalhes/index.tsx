@@ -59,17 +59,21 @@ export const ConteudoDetalhes = () => {
   if (!prato) return <p>Prato não encontrado</p>
 
   return (
-    <div>
-      <h1>{restaurante.titulo}</h1>
+    <S.CardFundo>
       <S.ImagemComida>
         <img src={prato.foto} alt={prato.nome} />
-        <h2>{prato.nome}</h2>
-        <p>{prato.descricao}</p>
-        <p>{prato.porcao}</p>
-        <button onClick={() => adicionarProduto(prato)}>
-          Adicionar ao Carrinho - {formataPreco(prato.preco)}
-        </button>
-      </S.ImagemComida>
-    </div>
+      </S.ImagemComida>  
+      <S.CardDetalhes>
+        <div className='container'>
+          <h2>{prato.nome}</h2>
+          <p >{prato.descricao}</p>
+          <p > <b>Serve: </b>{prato.porcao}</p>
+          <S.BotaoAdicionar onClick={() => adicionarProduto(prato)}>
+            Adicionar ao Carrinho - {formataPreco(prato.preco)}
+          </S.BotaoAdicionar>
+        </div>
+      </S.CardDetalhes>
+    
+    </S.CardFundo>
   )
 }

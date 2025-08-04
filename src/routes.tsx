@@ -17,7 +17,7 @@ export const Rotas = () => {
         <>
             <Routes location={state?.backgroundLocation || location}>
                 <Route path='/' element={<Home/>} />
-                <Route path='/perfil/:id' element={<Perfil />} />
+                <Route path='/restaurante/:id' element={<Perfil />} />
             </Routes>
              {/* Modal separado */}
             {state?.backgroundLocation && (

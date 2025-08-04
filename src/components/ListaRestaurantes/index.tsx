@@ -36,7 +36,7 @@ export const ListaRestaurantes = ({ restaurantes }: Props) => {
           </S.Titulo>
           <p>{restaurante.descricao}</p>
           <S.BotaoSaibaMais>
-            <Link to={`/perfil/${restaurante.id}`}>Saiba Mais</Link>
+            <Link to={`/restaurante/${restaurante.id}`}>Saiba Mais</Link>
           </S.BotaoSaibaMais>
         </S.CardLsita>
       ))}

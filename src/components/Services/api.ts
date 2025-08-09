@@ -10,6 +10,7 @@ export type Restaurante = {
   avaliacao: string
   descricao: string
   destacado: boolean
+  cardapio: string
 }
 
 // Cria a API com endpoints do efood

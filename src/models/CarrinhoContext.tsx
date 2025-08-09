@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
-// Define o tipo do prato
+// Tipo do prato
 interface Prato {
   foto: string
   preco: number
@@ -10,13 +10,15 @@ interface Prato {
   porcao: string
 }
 
-// Define a estrutura do contexto
+// Estrutura do contexto
 interface CarrinhoContextType {
-  quantidade: number
+  itens: Prato[]                      // lista dos itens no carrinho
   adicionarProduto: (produto: Prato) => void
+  removerProduto: (id: number) => void  // opcional, pra remover item
+  limparCarrinho: () => void              // opcional, para limpar tudo
 }
 
-// Define a tipagem das props do Provider
+// Props do provider
 interface CarrinhoProviderProps {
   children: React.ReactNode
 }
@@ -24,24 +26,30 @@ interface CarrinhoProviderProps {
 // Cria o contexto
 const CarrinhoContexto = createContext<CarrinhoContextType | undefined>(undefined)
 
-// Componente provider que vai envolver a aplicação
+// Provider que envolve a aplicação
 export const CarrinhoProvider: React.FC<CarrinhoProviderProps> = ({ children }) => {
-  const [quantidade, setQuantidade] = useState(0)
+  const [itens, setItens] = useState<Prato[]>([])
 
   const adicionarProduto = (produto: Prato) => {
-    setQuantidade((qtd) => qtd + 1)
-    // Aqui você pode armazenar os pratos, se quiser expandir o carrinho no futuro
-    console.log('Produto adicionado:', produto)
+    setItens((prevItens) => [...prevItens, produto])
+  }
+
+  const removerProduto = (id: number) => {
+    setItens((prevItens) => prevItens.filter(item => item.id !== id))
+  }
+
+  const limparCarrinho = () => {
+    setItens([])
   }
 
   return (
-    <CarrinhoContexto.Provider value={{ quantidade, adicionarProduto }}>
+    <CarrinhoContexto.Provider value={{ itens, adicionarProduto, removerProduto, limparCarrinho }}>
       {children}
     </CarrinhoContexto.Provider>
   )
 }
 
-// Hook para acessar o carrinho
+// Hook para usar o carrinho
 export const useCarrinho = () => {
   const context = useContext(CarrinhoContexto)
   if (!context) {

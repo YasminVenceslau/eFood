@@ -3,14 +3,16 @@ import fundoImg from '../../assets/imagens/HeaderPerfil.png'
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styles'
 import { ArrowLeftFromLine } from 'lucide-react'
-import { useCarrinho } from '../../models/CarrinhoContext'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { openi } from '../../store/reducer/Cart'
+import type { RootState } from '../../store'
 
 
 export const HeaderPerfil = () => {
 
-    const { quantidade } = useCarrinho()  // obtém a quantidade de produtos no carrinho
+    const quantidadeTotal = useSelector((state: RootState) =>
+  state.cart.itens.reduce((total, item) => total + item.quantidade, 0)
+)
     const dispatch = useDispatch()
     
 
@@ -43,7 +45,7 @@ export const HeaderPerfil = () => {
                     style={{ cursor: "pointer" }}
                     onClick={() => dispatch(openi())}
                     >
-                        {quantidade} produto(s) no carrinho
+                        {quantidadeTotal} produto(s) no carrinho
                     </li>
       </S.COntainer>
 

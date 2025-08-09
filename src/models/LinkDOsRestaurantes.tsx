@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-type Prato = {
+export type Prato = {
   foto: string
   preco: number
   id: number
@@ -10,15 +10,13 @@ type Prato = {
   porcao: string
 }
 
-type Restaurante = {
+export type Restaurante = {
   id: number
   titulo: string
   cardapio: Prato[]
   capa: string
   tipo: string
 }
-
-
   
 export function useRestaurante() {
   const { id } = useParams()

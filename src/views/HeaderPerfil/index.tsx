@@ -4,10 +4,15 @@ import logo from '../../assets/imagens/logo.png'
 import * as S from './styles'
 import { ArrowLeftFromLine } from 'lucide-react'
 import { useCarrinho } from '../../models/CarrinhoContext'
+import { useDispatch } from 'react-redux'
+import { openi } from '../../store/reducer/Cart'
+
 
 export const HeaderPerfil = () => {
 
     const { quantidade } = useCarrinho()  // obtém a quantidade de produtos no carrinho
+    const dispatch = useDispatch()
+    
 
     return(
         <>
@@ -33,11 +38,14 @@ export const HeaderPerfil = () => {
                     <li>
                         <S.Logo src={logo} alt="eFood " />
                     </li>
-                    {/* Quantidade de produtos no carrinho */}
-                    <li>
+                    {/* Ao clicar, abre o carrinho */}
+                    <li
+                    style={{ cursor: "pointer" }}
+                    onClick={() => dispatch(openi())}
+                    >
                         {quantidade} produto(s) no carrinho
                     </li>
-                </S.COntainer>
+      </S.COntainer>
 
             </div>
         </>

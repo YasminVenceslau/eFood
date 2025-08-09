@@ -32,8 +32,7 @@ export const Cart = () => {
                 <div>
                   <h3>{item.nome}</h3>
                   <span>
-                    R$ {(item.preco * item.quantidade).toFixed(2)} ({item.quantidade}x R${' '}
-                    {item.preco.toFixed(2)})
+                    R$ {(item.preco * item.quantidade).toFixed(2)} ({item.quantidade}x)
                   </span>
                 </div>
                 <button type="button" onClick={() => dispatch(remove(item.id))}>
@@ -47,9 +46,10 @@ export const Cart = () => {
           Valor Total <span>R$ {valorTotal.toFixed(2)}</span>
         </Price>
         <BotaoCArt type="button" title="Clique aqui e continue">
-          Continuar com para a entrega
+          Continuar para a entrega
         </BotaoCArt>
       </SideBAr>
     </CartCOntainer>
+    // 242,50
   )
 }

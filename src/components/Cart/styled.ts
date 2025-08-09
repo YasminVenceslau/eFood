@@ -30,6 +30,7 @@ export const SideBAr = styled.aside`
   z-index: 1;
   padding: 40px 16px 0 16px;
   
+  
 `
 export const Price = styled.p`
   font-weight: bold;
@@ -73,30 +74,46 @@ export const BotaoCArt = styled.button`
 
 export const CartItem = styled.li`
   display: flex;
-  padding-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${cores.corDoROdaPE}; /* fundo claro */
+  padding: 8px;
   margin-bottom: 8px;
-  padding: 8px ;
-  
-  background-color: ${cores.corDoROdaPE};
-  
+
   img {
     width: 80px;
     height: 80px;
     object-fit: cover;
+    flex-shrink: 0;
   }
 
   div {
-    padding-left: 8px;
+    flex: 1;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    span{
-      font-size: 14px;
-      
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      color: ${cores.corPrincipal};
+    }
+
+    span {
+      font-size: 16px;
+      color: ${cores.corPrincipal};
     }
   }
-  button {
-    margin-top: 50px;
-    border: none;
-    background-color: transparent;
-  }
 
+  button {
+    background: none;
+    border: none;
+    color: ${cores.corPrincipal};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `

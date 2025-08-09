@@ -3,7 +3,7 @@ import { cores } from "../../styles";
 
 export const MainLista = styled.main`
     background-color: ${cores.corBranco};
-    padding: 90px;
+    padding: 132px;
     display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;

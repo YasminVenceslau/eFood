@@ -29,11 +29,9 @@ export const Cart = () => {
             itens.map((item) => (
               <CartItem key={item.id}>
                 <img src={item.imagem} alt={item.nome} />
-                <div>
+                <div className="info">
                   <h3>{item.nome}</h3>
-                  <span>
-                    R$ {(item.preco * item.quantidade).toFixed(2)} ({item.quantidade}x)
-                  </span>
+                  <span>R$ {(item.preco * item.quantidade).toFixed(2)}</span>
                 </div>
                 <button type="button" onClick={() => dispatch(remove(item.id))}>
                   <Trash2 />

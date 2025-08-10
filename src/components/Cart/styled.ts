@@ -29,7 +29,7 @@ export const SideBAr = styled.aside`
   background-color: ${cores.corPrincipal};
   z-index: 1;
   padding: 40px 16px 0 16px;
-  
+  width: 360px;
   
 `
 export const Price = styled.p`
@@ -79,7 +79,8 @@ export const CartItem = styled.li`
   background-color: ${cores.corDoROdaPE}; /* fundo claro */
   padding: 8px;
   margin-bottom: 8px;
-
+  height: 100px;
+  
   img {
     width: 80px;
     height: 80px;
@@ -93,17 +94,24 @@ export const CartItem = styled.li`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    width: 344px;
+    div{
+      justify-content: center;
+      padding: 16px;
+    }
     h3 {
+      display: block;
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 4px;
       color: ${cores.corPrincipal};
+      margin-bottom: 16px;
     }
 
     span {
       font-size: 16px;
       color: ${cores.corPrincipal};
+      
     }
   }
 
@@ -112,8 +120,6 @@ export const CartItem = styled.li`
     border: none;
     color: ${cores.corPrincipal};
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 50px;
   }
 `

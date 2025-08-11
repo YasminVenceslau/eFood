@@ -4,6 +4,7 @@ import { Home } from './pages/Home'
 
 import { Perfil } from './pages/Perfil'
 import { Detalhes } from './pages/Detalhes'
+import { Checkout } from './components/Checkout'
 
 
 
@@ -18,6 +19,9 @@ export const Rotas = () => {
             <Routes location={state?.backgroundLocation || location}>
                 <Route path='/' element={<Home/>} />
                 <Route path='/restaurante/:id' element={<Perfil />} />
+                <Route path="/checkout" element={<Checkout voltar={function (): void {
+                    throw new Error('Function not implemented.')
+                } } />} />
             </Routes>
              {/* Modal separado */}
             {state?.backgroundLocation && (

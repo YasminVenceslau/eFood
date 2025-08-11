@@ -123,7 +123,7 @@ export const CartItem = styled.li`
     color: ${cores.corPrincipal};
     cursor: pointer;
     position: relative;
-    right: 1px;
+    right: 10px;
     top: 35px;
     
   }

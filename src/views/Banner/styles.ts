@@ -3,11 +3,14 @@ import styled from "styled-components";
 import { cores } from '../../styles';
 
 export const ImagemBanner = styled.div`
-    height: 280px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 24px;
-    overflow-y: hidden;
+     width: 100vw; /* ocupa toda a largura da viewport */
+  height: 280px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* centraliza a imagem */
+  padding: 24px;
+  overflow-y: hidden;
+
     
     i{
         color: ${cores.corBranco} !important;

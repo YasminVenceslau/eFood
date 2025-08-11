@@ -33,7 +33,7 @@ export const SideBAr = styled.aside`
   
 `
 export const Price = styled.p`
-  font-weight: bold;
+
   font-size: 14px;
   color: ${cores.corBranco};
   margin-bottom: 24px;
@@ -80,6 +80,7 @@ export const CartItem = styled.li`
   padding: 8px;
   margin-bottom: 8px;
   height: 100px;
+  width: 344px;
   
   img {
     width: 80px;
@@ -105,10 +106,11 @@ export const CartItem = styled.li`
       font-weight: bold;
       margin-bottom: 4px;
       color: ${cores.corPrincipal};
-      margin-bottom: 16px;
+      padding-bottom: 8px;
     }
 
     span {
+      margin-bottom: 32px;
       font-size: 16px;
       color: ${cores.corPrincipal};
       
@@ -120,6 +122,9 @@ export const CartItem = styled.li`
     border: none;
     color: ${cores.corPrincipal};
     cursor: pointer;
-    padding-top: 50px;
+    position: relative;
+    right: 1px;
+    top: 35px;
+    
   }
 `

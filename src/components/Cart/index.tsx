@@ -34,7 +34,7 @@ export const Cart = () => {
                   <span>R$ {(item.preco * item.quantidade).toFixed(2)}</span>
                 </div>
                 <button type="button" onClick={() => dispatch(remove(item.id))}>
-                  <Trash2 />
+                  <Trash2 strokeWidth={1} />
                 </button>
               </CartItem>
             ))

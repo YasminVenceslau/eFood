@@ -10,7 +10,7 @@ export const cores = {
 
 export const GlobalCss = createGlobalStyle`
   * {
-        margin: 0 0;
+        margin: 0 ;
         padding: 0;
         box-sizing: border-box;
         font-family: Roboto, sans-serif;
@@ -22,10 +22,9 @@ export const GlobalCss = createGlobalStyle`
     }
 
     body{
-        width:1300px;
+        max-width: 1366px;  
         color: ${cores.corPrincipal};
         background-color: #FFEBD9;
-        max-width: 1300px;
         max-width: 1300px;
         margin: 0 auto;
     }  

@@ -5,19 +5,20 @@ export const MainLista = styled.main`
     background-color: ${cores.corBranco};
     padding: 132px;
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin: 0 auto;
     
 `
 
 export const CardLista = styled.div`
     background-color: ${cores.corPrincipal};
     color: ${cores.corBranco};
+    
     padding: 8px;
     display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    flex-direction: column;
+    
 
 `
 export const CardTitulo = styled.h4`

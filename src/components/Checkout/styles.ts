@@ -3,14 +3,17 @@ import { cores } from "../../styles";
 
 export const ContainerCheckout = styled.div`
    
-    h3{
+    h3,h4{
         color: ${cores.corDEFundo} !important;
         padding-bottom: 16px;
+        font-size: 16px;
     }
+    
 
     label{
         color: ${cores.corDEFundo} !important;
         font-weight: 700;
+        font-size: 14px;
     }
     input{
         margin: 8px 0;
@@ -21,6 +24,7 @@ export const ContainerCheckout = styled.div`
         color: #4B4B4B;
         height: 32px;
         font-weight: 700;
+        font-size: 14px;
     }
     button{
         margin-bottom: 8px;

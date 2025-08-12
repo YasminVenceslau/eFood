@@ -34,6 +34,12 @@ export const ContainerCheckout = styled.div`
         margin-top: 24px;
     }
     
+    p{
+        color:${cores.corDoROdaPE};
+        font-size: 14px;
+       
+        margin-bottom: 24px;
+    }
 `
 export const CardSecun = styled.div`
     display: flex;

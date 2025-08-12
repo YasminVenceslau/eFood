@@ -4,6 +4,7 @@ import { CardSecun, ContainerCheckout } from "./styles"
 type CheckoutProps = {
   voltar: () => void
   carregarPagamento: () => void
+  concluirPagamento?: ( ) => void
 }
 
 export const Checkout = ({ voltar, carregarPagamento }: CheckoutProps) => {

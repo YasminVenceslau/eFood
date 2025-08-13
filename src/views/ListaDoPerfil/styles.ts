@@ -8,13 +8,13 @@ export const MainLista = styled.main`
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
     margin: 0 auto;
-    
+    width: 100%;
 `
 
 export const CardLista = styled.div`
     background-color: ${cores.corPrincipal};
     color: ${cores.corBranco};
-    
+    width: 100%;
     padding: 8px;
     display: flex;
     flex-direction: column;

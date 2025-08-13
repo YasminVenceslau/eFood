@@ -21,6 +21,8 @@ export const Rotas = () => {
                 <Route path='/restaurante/:id' element={<Perfil />} />
                 <Route path="/checkout" element={<Checkout voltar={function (): void {
                     throw new Error('Function not implemented.')
+                } } carregarPagamento={function (): void {
+                    throw new Error('Function not implemented.')
                 } } />} />
             </Routes>
              {/* Modal separado */}

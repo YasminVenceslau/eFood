@@ -23,6 +23,9 @@ export const Rotas = () => {
                     throw new Error('Function not implemented.')
                 } } carregarPagamento={function (): void {
                     throw new Error('Function not implemented.')
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                } } produtos={[]} setEntrega={function (dados: { quemRecebe: string; endereco: string; cidade: string; CEP: string; numero: string; complemento: string }): void {
+                    throw new Error('Function not implemented.')
                 } } />} />
             </Routes>
              {/* Modal separado */}

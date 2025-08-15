@@ -24,7 +24,6 @@ const cartSlice = createSlice({
   reducers: {
     add: (state, action: PayloadAction<Omit<CartItem, 'quantidade'>>) => {
       const itemExistente = state.itens.find(item => item.id === action.payload.id)
-
       if (itemExistente) {
         itemExistente.quantidade += 1
       } else {
@@ -39,9 +38,13 @@ const cartSlice = createSlice({
     },
     closedi: (state) => {
       state.isOpen = false
+    },
+    // ação para limpar todo o carrinho
+    resetCart: (state) => {
+      state.itens = []
     }
   }
 })
 
-export const { add, remove, openi, closedi } = cartSlice.actions
+export const { add, remove, openi, closedi, resetCart } = cartSlice.actions
 export default cartSlice.reducer

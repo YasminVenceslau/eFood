@@ -14,6 +14,7 @@ export const ContainerCheckout = styled.div`
         color: ${cores.corDEFundo} !important;
         font-weight: 700;
         font-size: 14px;
+        
     }
     input{
         margin: 8px 0;
@@ -39,6 +40,12 @@ export const ContainerCheckout = styled.div`
         font-size: 14px;
        
         margin-bottom: 24px;
+    }
+
+    small{
+        color:${cores.corDoROdaPE};
+        font-size: 8px;
+        display: block;
     }
 `
 export const CardSecun = styled.div`

@@ -20,20 +20,16 @@ export const Cart = () => {
   const isOpen = useSelector((state: RootState) => state.cart.isOpen)
   const itens = useSelector((state: RootState) => state.cart.itens)
 
-  // Estados possíveis do fluxo do carrinho
-  const [modo, setModo] = useState<
-    'carrinho' | 'checkout' | 'pagamento' | 'concluirPagamento'
-  >('carrinho')
+  const [modo, setModo] = useState<'carrinho' | 'checkout' | 'pagamento' | 'concluirPagamento'>('carrinho')
 
-  // Calcula o valor total do carrinho
-  const ValorTotal = itens.reduce(
-    (acc, item) => acc + item.preco * item.quantidade,
-    0
-  )
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [entrega, setEntrega] = useState<any>(null)
+  const [orderId, setOrderId] = useState<string>('')
+
+  const ValorTotal = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
 
   return (
     <CartCOntainer className={isOpen ? 'is-open' : ''}>
-      {/* Clique no fundo fecha o carrinho e volta para o início */}
       <Overlay
         onClick={() => {
           dispatch(closedi())
@@ -73,11 +69,7 @@ export const Cart = () => {
               onClick={() => setModo('checkout')}
               type="button"
               disabled={itens.length === 0}
-              title={
-                itens.length === 0
-                  ? 'Carrinho vazio'
-                  : 'Clique aqui e continue'
-              }
+              title={itens.length === 0 ? 'Carrinho vazio' : 'Clique aqui e continue'}
             >
               Continuar para a entrega
             </BotaoCArt>
@@ -88,22 +80,33 @@ export const Cart = () => {
           <Checkout
             voltar={() => setModo('carrinho')}
             carregarPagamento={() => setModo('pagamento')}
+            produtos={itens.map(item => ({ id: item.id, price: item.preco }))}
+            setEntrega={setEntrega}
           />
         )}
 
-        {modo === 'pagamento' && (
+        {modo === 'pagamento' && entrega && (
           <Pagamento
             voltar={() => setModo('checkout')}
-            concluirPagamento={() => setModo('concluirPagamento')}
+            concluirPagamento={(id: string) => {
+              setOrderId(id)
+              setModo('concluirPagamento')
+            }}
+            quemRecebe={entrega.quemRecebe}
+            endereco={entrega.endereco}
+            cidade={entrega.cidade}
+            CEP={entrega.CEP}
+            numero={entrega.numero}
+            complemento={entrega.complemento}
           />
         )}
-
         {modo === 'concluirPagamento' && (
           <Pedido
             concluir={() => {
-              dispatch(closedi()) // Fecha o carrinho
-              setModo('carrinho') // Volta para o início para nova compra
+              dispatch(closedi())
+              setModo('carrinho')
             }}
+            orderId={orderId} // passa o id do pedido para exibir
           />
         )}
       </SideBAr>
